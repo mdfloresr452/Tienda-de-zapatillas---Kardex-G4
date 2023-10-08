@@ -387,4 +387,8 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (382, 'Distrito Capital', 19),
     (383, 'Dependencias Federales', 19);
 
-INSERT INTO USUARIO(Usua_Dni, Usua_Nombres, Usua_Contrasenha, Usua_IdRol, Usua_Saldo, Usua_Estado)
+INSERT INTO Usuario(Usua_Dni, Usua_Nombres, Usua_Contrasenha, Usua_Saldo, Usua_IdGenero, Usua_IdRegion, Usua_IdRol, Usua_Estado)
+VALUES
+(70143024, 'Carlos Victor Flores Paxi', 'HESOYAM', 0.00, 1, 307, 1, 2),
+(78415749, 'Maria de la Luz Flores', 'ABCDE', 0.00, 2, 117, 1, 2),
+(73201649, 'Victor Manuel Sanchez Mamani', 'QWERTY', 0.00, 1, 61, 1, 1);
