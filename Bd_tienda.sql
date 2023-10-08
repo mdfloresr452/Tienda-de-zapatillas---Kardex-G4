@@ -1,7 +1,6 @@
 INSERT INTO Rol(IdRol, RolNombre) VALUES (1, 'Administrador'), (2, 'Cliente');
 INSERT INTO Genero(IdGenero, Gene_Sexo) VALUES (1, 'Hombre'), (2, 'Mujer');
 INSERT INTO Pais (`IdPais`, `Pais_Nombre`) VALUES (1, 'Argentina'),(2, 'Bolivia'),(3, 'Brasil'),(4, 'Chile'),(5, 'Colombia'),(6, 'Costa Rica'),(7, 'Cuba'),(8, 'Ecuador'),(9, 'El Salvador'),(10, 'Guatemala'),(11, 'Honduras'),(12, 'México'),(13, 'Nicaragua'),(14, 'Panamá'),(15, 'Paraguay'),(16, 'Perú'),(17, 'República Dominicana'),(18, 'Uruguay'),(19, 'Venezuela');
-I-- Insertar las provincias de Argentina en la tabla "Departamento" con llave primaria especificada
 INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (1, 'Buenos Aires', 1), -- Argentina
     (2, 'Catamarca', 1),
@@ -25,7 +24,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (20, 'Santa Fe', 1),
     (21, 'Santiago del Estero', 1),
     (22, 'Tierra del Fuego', 1),
-    (23, 'Tucumán', 1);
+    (23, 'Tucumán', 1),
     (24, 'Chuquisaca', 2), -- Bolivia
     (25, 'La Paz', 2),
     (26, 'Cochabamba', 2),
@@ -34,7 +33,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (29, 'Tarija', 2),
     (30, 'Santa Cruz', 2),
     (31, 'Beni', 2),
-    (32, 'Pando', 2);
+    (32, 'Pando', 2),
     (33, 'Acre', 3), -- Brasil
     (34, 'Alagoas', 3),
     (35, 'Amapá', 3),
@@ -61,7 +60,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (56, 'Santa Catarina', 3),
     (57, 'São Paulo', 3),
     (58, 'Sergipe', 3),
-    (59, 'Tocantins', 3);
+    (59, 'Tocantins', 3),
     (60, 'Región de Arica y Parinacota', 4),      -- Chile
     (61, 'Región de Tarapacá', 4),
     (62, 'Región de Antofagasta', 4),
@@ -77,7 +76,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (72, 'Región de Los Ríos', 4),
     (73, 'Región de Los Lagos', 4),
     (74, 'Región de Aysén del General Carlos Ibáñez del Campo', 4),
-    (75, 'Región de Magallanes y de la Antártica Chilena', 4);
+    (75, 'Región de Magallanes y de la Antártica Chilena', 4),
     (76, 'Amazonas', 5),        -- Colombia
     (77, 'Antioquia', 5),
     (78, 'Arauca', 5),
@@ -109,14 +108,14 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (104, 'Tolima', 5),
     (105, 'Valle del Cauca', 5),
     (106, 'Vaupés', 5),
-    (107, 'Vichada', 5);
+    (107, 'Vichada', 5),
     (108, 'San José', 6),         -- Costa Rica
     (109, 'Alajuela', 6),
     (110, 'Cartago', 6),
     (111, 'Heredia', 6),
     (112, 'Guanacaste', 6),
     (113, 'Puntarenas', 6),
-    (114, 'Limón', 6);
+    (114, 'Limón', 6),
     (115, 'Pinar del Río', 7),     -- Cuba
     (116, 'Artemisa', 7),
     (117, 'La Habana', 7),
@@ -132,7 +131,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (127, 'Granma', 7),
     (128, 'Santiago de Cuba', 7),
     (129, 'Guantánamo', 7),
-    (130, 'Isla de la Juventud', 7);
+    (130, 'Isla de la Juventud', 7),
     (131, 'Azuay', 8),         -- Ecuador
     (132, 'Bolívar', 8),
     (133, 'Cañar', 8),
@@ -156,7 +155,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (151, 'Santo Domingo de los Tsáchilas', 8),
     (152, 'Sucumbíos', 8),
     (153, 'Tungurahua', 8),
-    (154, 'Zamora-Chinchipe', 8);
+    (154, 'Zamora-Chinchipe', 8),
     (155, 'Ahuachapán', 9),         -- El Salvador
     (156, 'Santa Ana', 9),
     (157, 'Sonsonate', 9),
@@ -169,7 +168,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (164, 'Usulután', 9),
     (165, 'San Miguel', 9),
     (166, 'Morazán', 9),
-    (167, 'La Unión', 9);
+    (167, 'La Unión', 9),
     (168, 'Guatemala', 10),         -- Guatemala
     (169, 'Baja Verapaz', 10),
     (170, 'Alta Verapaz', 10),
@@ -192,7 +191,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (187, 'Huehuetenango', 10),
     (188, 'Quiché', 10),
     (189, 'Peten', 10),
-    (190, 'Ixcán', 10);
+    (190, 'Ixcán', 10),
     (191, 'Atlántida', 11),       -- Honduras
     (192, 'Colón', 11),
     (193, 'Comayagua', 11),
@@ -210,8 +209,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (205, 'Olancho', 11),
     (206, 'Santa Bárbara', 11),
     (207, 'Valle', 11),
-    (208, 'Yoro', 11);
-
+    (208, 'Yoro', 11),
     (209, 'Aguascalientes', 12),     -- México
     (210, 'Baja California', 12),
     (211, 'Baja California Sur', 12),
@@ -242,7 +240,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (236, 'Tlaxcala', 12),
     (237, 'Veracruz', 12),
     (238, 'Yucatán', 12),
-    (239, 'Zacatecas', 12);
+    (239, 'Zacatecas', 12),
     (240, 'Boaco', 13),         -- Nicaragua
     (241, 'Carazo', 13),
     (242, 'Chinandega', 13),
@@ -257,7 +255,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (251, 'Matagalpa', 13),
     (252, 'Nueva Segovia', 13),
     (253, 'Río San Juan', 13),
-    (254, 'Rivas', 13);
+    (254, 'Rivas', 13),
     (255, 'Bocas del Toro', 14),     -- Panamá
     (256, 'Coclé', 14),
     (257, 'Colón', 14),
@@ -270,7 +268,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (264, 'Veraguas', 14),
     (265, 'Emberá-Wounaan', 14),
     (266, 'Guna Yala', 14),
-    (267, 'Ngäbe-Buglé', 14);
+    (267, 'Ngäbe-Buglé', 14),
     (268, 'Concepción', 15),         -- Paraguay
     (269, 'San Pedro', 15),
     (270, 'Cordillera', 15),
@@ -287,7 +285,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (281, 'Canindeyú', 15),
     (282, 'Presidente Hayes', 15),
     (283, 'Boquerón', 15),
-    (284, 'Alto Paraguay', 15);
+    (284, 'Alto Paraguay', 15),
     (285, 'Amazonas', 16),         -- Perú
     (286, 'Áncash', 16),
     (287, 'Apurímac', 16),
@@ -312,7 +310,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (306, 'San Martín', 16),
     (307, 'Tacna', 16),
     (308, 'Tumbes', 16),
-    (309, 'Ucayali', 16);
+    (309, 'Ucayali', 16),
     (310, 'Azua', 17),               -- República Dominicana
     (311, 'Bahoruco', 17),
     (312, 'Barahona', 17),
@@ -342,7 +340,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (336, 'Santiago', 17),
     (337, 'Santiago Rodríguez', 17),
     (338, 'Santo Domingo', 17),
-    (339, 'Valverde', 17);
+    (339, 'Valverde', 17),
     (340, 'Artigas', 18),         -- Uruguay
     (341, 'Canelones', 18),
     (342, 'Cerro Largo', 18),
@@ -361,7 +359,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (355, 'San José', 18),
     (356, 'Soriano', 18),
     (357, 'Tacuarembó', 18),
-    (358, 'Treinta y Tres', 18);
+    (358, 'Treinta y Tres', 18),
     (359, 'Amazonas', 19),         --  Venezuela
     (360, 'Anzoátegui', 19),
     (361, 'Apure', 19),
