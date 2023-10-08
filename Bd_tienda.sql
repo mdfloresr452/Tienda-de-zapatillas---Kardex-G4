@@ -1,153 +1,389 @@
-CREATE TABLE `Modelo` (
-    `IdModelo` INT NOT NULL AUTO_INCREMENT,
-    `Mode_Nombre` VARCHAR(45) NOT NULL,
-    `Mode_Genero` ENUM('Todos', 'Hombre', 'Mujer', 'Niño', 'Niña') NOT NULL,
-    PRIMARY KEY (`IdModelo`)
-);
+INSERT INTO Rol(IdRol, RolNombre) VALUES (1, 'Administrador'), (2, 'Cliente');
+INSERT INTO Genero(IdGenero, Gene_Sexo) VALUES (1, 'Hombre'), (2, 'Mujer');
+INSERT INTO Pais (`IdPais`, `Pais_Nombre`) VALUES (1, 'Argentina'),(2, 'Bolivia'),(3, 'Brasil'),(4, 'Chile'),(5, 'Colombia'),(6, 'Costa Rica'),(7, 'Cuba'),(8, 'Ecuador'),(9, 'El Salvador'),(10, 'Guatemala'),(11, 'Honduras'),(12, 'México'),(13, 'Nicaragua'),(14, 'Panamá'),(15, 'Paraguay'),(16, 'Perú'),(17, 'República Dominicana'),(18, 'Uruguay'),(19, 'Venezuela');
+I-- Insertar las provincias de Argentina en la tabla "Departamento" con llave primaria especificada
+INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
+    (1, 'Buenos Aires', 1), -- Argentina
+    (2, 'Catamarca', 1),
+    (3, 'Chaco', 1),
+    (4, 'Chubut', 1),
+    (5, 'Córdoba', 1),
+    (6, 'Corrientes', 1),
+    (7, 'Entre Ríos', 1),
+    (8, 'Formosa', 1),
+    (9, 'Jujuy', 1),
+    (10, 'La Pampa', 1),
+    (11, 'La Rioja', 1),
+    (12, 'Mendoza', 1),
+    (13, 'Misiones', 1),
+    (14, 'Neuquén', 1),
+    (15, 'Río Negro', 1),
+    (16, 'Salta', 1),
+    (17, 'San Juan', 1),
+    (18, 'San Luis', 1),
+    (19, 'Santa Cruz', 1),
+    (20, 'Santa Fe', 1),
+    (21, 'Santiago del Estero', 1),
+    (22, 'Tierra del Fuego', 1),
+    (23, 'Tucumán', 1);
+    (24, 'Chuquisaca', 2), -- Bolivia
+    (25, 'La Paz', 2),
+    (26, 'Cochabamba', 2),
+    (27, 'Oruro', 2),
+    (28, 'Potosí', 2),
+    (29, 'Tarija', 2),
+    (30, 'Santa Cruz', 2),
+    (31, 'Beni', 2),
+    (32, 'Pando', 2);
+    (33, 'Acre', 3), -- Brasil
+    (34, 'Alagoas', 3),
+    (35, 'Amapá', 3),
+    (36, 'Amazonas', 3),
+    (37, 'Bahía', 3),
+    (38, 'Ceará', 3),
+    (39, 'Distrito Federal', 3),
+    (40, 'Espírito Santo', 3),
+    (41, 'Goiás', 3),
+    (42, 'Maranhão', 3),
+    (43, 'Mato Grosso', 3),
+    (44, 'Mato Grosso do Sul', 3),
+    (45, 'Minas Gerais', 3),
+    (46, 'Pará', 3),
+    (47, 'Paraíba', 3),
+    (48, 'Paraná', 3),
+    (49, 'Pernambuco', 3),
+    (50, 'Piauí', 3),
+    (51, 'Rio de Janeiro', 3),
+    (52, 'Rio Grande do Norte', 3),
+    (53, 'Rio Grande do Sul', 3),
+    (54, 'Rondônia', 3),
+    (55, 'Roraima', 3),
+    (56, 'Santa Catarina', 3),
+    (57, 'São Paulo', 3),
+    (58, 'Sergipe', 3),
+    (59, 'Tocantins', 3);
+    (60, 'Región de Arica y Parinacota', 4),      -- Chile
+    (61, 'Región de Tarapacá', 4),
+    (62, 'Región de Antofagasta', 4),
+    (63, 'Región de Atacama', 4),
+    (64, 'Región de Coquimbo', 4),
+    (65, 'Región de Valparaíso', 4),
+    (66, 'Región Metropolitana de Santiago', 4),
+    (67, 'Región del Libertador General Bernardo O Higgins', 4),
+    (68, 'Región del Maule', 4),
+    (69, 'Región de Ñuble', 4),
+    (70, 'Región del Biobío', 4),
+    (71, 'Región de La Araucanía', 4),
+    (72, 'Región de Los Ríos', 4),
+    (73, 'Región de Los Lagos', 4),
+    (74, 'Región de Aysén del General Carlos Ibáñez del Campo', 4),
+    (75, 'Región de Magallanes y de la Antártica Chilena', 4);
+    (76, 'Amazonas', 5),        -- Colombia
+    (77, 'Antioquia', 5),
+    (78, 'Arauca', 5),
+    (79, 'Atlántico', 5),
+    (80, 'Bolívar', 5),
+    (81, 'Boyacá', 5),
+    (82, 'Caldas', 5),
+    (83, 'Caquetá', 5),
+    (84, 'Casanare', 5),
+    (85, 'Cauca', 5),
+    (86, 'Cesar', 5),
+    (87, 'Chocó', 5),
+    (88, 'Córdoba', 5),
+    (89, 'Cundinamarca', 5),
+    (90, 'Guainía', 5),
+    (91, 'Guaviare', 5),
+    (92, 'Huila', 5),
+    (93, 'La Guajira', 5),
+    (94, 'Magdalena', 5),
+    (95, 'Meta', 5),
+    (96, 'Nariño', 5),
+    (97, 'Norte de Santander', 5),
+    (98, 'Putumayo', 5),
+    (99, 'Quindío', 5),
+    (100, 'Risaralda', 5),
+    (101, 'San Andrés y Providencia', 5),
+    (102, 'Santander', 5),
+    (103, 'Sucre', 5),
+    (104, 'Tolima', 5),
+    (105, 'Valle del Cauca', 5),
+    (106, 'Vaupés', 5),
+    (107, 'Vichada', 5);
+    (108, 'San José', 6),         -- Costa Rica
+    (109, 'Alajuela', 6),
+    (110, 'Cartago', 6),
+    (111, 'Heredia', 6),
+    (112, 'Guanacaste', 6),
+    (113, 'Puntarenas', 6),
+    (114, 'Limón', 6);
+    (115, 'Pinar del Río', 7),     -- Cuba
+    (116, 'Artemisa', 7),
+    (117, 'La Habana', 7),
+    (118, 'Mayabeque', 7),
+    (119, 'Matanzas', 7),
+    (120, 'Cienfuegos', 7),
+    (121, 'Villa Clara', 7),
+    (122, 'Sancti Spíritus', 7),
+    (123, 'Ciego de Ávila', 7),
+    (124, 'Camagüey', 7),
+    (125, 'Las Tunas', 7),
+    (126, 'Holguín', 7),
+    (127, 'Granma', 7),
+    (128, 'Santiago de Cuba', 7),
+    (129, 'Guantánamo', 7),
+    (130, 'Isla de la Juventud', 7);
+    (131, 'Azuay', 8),         -- Ecuador
+    (132, 'Bolívar', 8),
+    (133, 'Cañar', 8),
+    (134, 'Carchi', 8),
+    (135, 'Chimborazo', 8),
+    (136, 'Cotopaxi', 8),
+    (137, 'El Oro', 8),
+    (138, 'Esmeraldas', 8),
+    (139, 'Galápagos', 8),
+    (140, 'Guayas', 8),
+    (141, 'Imbabura', 8),
+    (142, 'Loja', 8),
+    (143, 'Los Ríos', 8),
+    (144, 'Manabí', 8),
+    (145, 'Morona Santiago', 8),
+    (146, 'Napo', 8),
+    (147, 'Orellana', 8),
+    (148, 'Pastaza', 8),
+    (149, 'Pichincha', 8),
+    (150, 'Santa Elena', 8),
+    (151, 'Santo Domingo de los Tsáchilas', 8),
+    (152, 'Sucumbíos', 8),
+    (153, 'Tungurahua', 8),
+    (154, 'Zamora-Chinchipe', 8);
+    (155, 'Ahuachapán', 9),         -- El Salvador
+    (156, 'Santa Ana', 9),
+    (157, 'Sonsonate', 9),
+    (158, 'La Libertad', 9),
+    (159, 'San Salvador', 9),
+    (160, 'Cuscatlán', 9),
+    (161, 'La Paz', 9),
+    (162, 'Cabañas', 9),
+    (163, 'San Vicente', 9),
+    (164, 'Usulután', 9),
+    (165, 'San Miguel', 9),
+    (166, 'Morazán', 9),
+    (167, 'La Unión', 9);
+    (168, 'Guatemala', 10),         -- Guatemala
+    (169, 'Baja Verapaz', 10),
+    (170, 'Alta Verapaz', 10),
+    (171, 'El Progreso', 10),
+    (172, 'Izabal', 10),
+    (173, 'Zacapa', 10),
+    (174, 'Chiquimula', 10),
+    (175, 'Santa Rosa', 10),
+    (176, 'Jalapa', 10),
+    (177, 'Jutiapa', 10),
+    (178, 'Sacatepéquez', 10),
+    (179, 'Chimaltenango', 10),
+    (180, 'Escuintla', 10),
+    (181, 'Sololá', 10),
+    (182, 'Totonicapán', 10),
+    (183, 'Quetzaltenango', 10),
+    (184, 'Suchitepéquez', 10),
+    (185, 'Retalhuleu', 10),
+    (186, 'San Marcos', 10),
+    (187, 'Huehuetenango', 10),
+    (188, 'Quiché', 10),
+    (189, 'Peten', 10),
+    (190, 'Ixcán', 10);
+    (191, 'Atlántida', 11),       -- Honduras
+    (192, 'Colón', 11),
+    (193, 'Comayagua', 11),
+    (194, 'Copán', 11),
+    (195, 'Cortés', 11),
+    (196, 'Choluteca', 11),
+    (197, 'El Paraíso', 11),
+    (198, 'Francisco Morazán', 11),
+    (199, 'Gracias a Dios', 11),
+    (200, 'Intibucá', 11),
+    (201, 'Islas de la Bahía', 11),
+    (202, 'La Paz', 11),
+    (203, 'Lempira', 11),
+    (204, 'Ocotepeque', 11),
+    (205, 'Olancho', 11),
+    (206, 'Santa Bárbara', 11),
+    (207, 'Valle', 11),
+    (208, 'Yoro', 11);
 
-CREATE TABLE `Marca` (
-    `IdMarca` INT NOT NULL AUTO_INCREMENT,
-    `Marc_Nombre` VARCHAR(45) NOT NULL,
-    PRIMARY KEY (`IdMarca`)
-);
-
-CREATE TABLE `Detalle_Precios` (
-    `IdDetalle_Precios` INT NOT NULL AUTO_INCREMENT,
-    `DPre_Precio` FLOAT NOT NULL,
-    `Detalle_PrecioscolFecha` VARCHAR(45) NOT NULL,
-    PRIMARY KEY (`IdDetalle_Precios`)
-);
-
-CREATE TABLE `Productos` (
-    `IdProductos` INT NOT NULL AUTO_INCREMENT,
-    `Prod_Nombre` VARCHAR(45) NOT NULL,
-    `Prod_Stock` INT NOT NULL,
-    `Prod_Descripcion` VARCHAR(50) NOT NULL,
-    `Prod_IdModelo` INT NOT NULL,
-    `Prod_IdMarca` INT NOT NULL,
-    `Detalle_Precios_IdDetalle_Precios` INT NOT NULL,
-    PRIMARY KEY (`IdProductos`),
-    FOREIGN KEY (`Prod_IdModelo`) REFERENCES `Modelo` (`IdModelo`),
-    FOREIGN KEY (`Prod_IdMarca`) REFERENCES `Marca` (`IdMarca`),
-    FOREIGN KEY (`Detalle_Precios_IdDetalle_Precios`) REFERENCES `Detalle_Precios` (`IdDetalle_Precios`)
-);
-
-CREATE TABLE `Pais` (
-    `IdPais` INT NOT NULL AUTO_INCREMENT,
-    `Pais_Nombre` VARCHAR(45) NOT NULL,
-    PRIMARY KEY (`IdPais`)
-);
-
-CREATE TABLE `Region` (
-    `IdRegion` INT NOT NULL AUTO_INCREMENT,
-    `Regi_Nombre` VARCHAR(45) NOT NULL,
-    `Regi_Direccion` VARCHAR(45) NOT NULL,
-    `Regi_IdPais` INT NOT NULL,
-    PRIMARY KEY (`IdRegion`),
-    FOREIGN KEY (`Regi_IdPais`) REFERENCES `Pais` (`IdPais`)
-);
-
-CREATE TABLE `Usuario` (
-    `Usua_Dni` INT NOT NULL AUTO_INCREMENT,
-    `Usua_Nombres` VARCHAR(45) NOT NULL,
-    `Usua_Contrasenha` VARCHAR(45) NOT NULL,
-    `Usua_Rol` ENUM('Cliente', 'Administrador') NOT NULL,
-    `Usua_Saldo` FLOAT NOT NULL,
-    `Usua_Estado` ENUM('Despedido', 'Contratado', 'Cuenta Suspendida', 'Activo') NOT NULL,
-    `Usua_IdPais` INT NOT NULL,
-    `Usua_IdRegion` INT NOT NULL,
-    PRIMARY KEY (`Usua_Dni`),
-    FOREIGN KEY (`Usua_IdPais`) REFERENCES `Pais` (`IdPais`),
-    FOREIGN KEY (`Usua_IdRegion`) REFERENCES `Region` (`IdRegion`)
-);
-
-CREATE TABLE `Codigo_Descuento` (
-    `IdCodigo_Descuento` INT NOT NULL AUTO_INCREMENT,
-    `CDes_Codigo` VARCHAR(45) NULL,
-    `CDes_Porcentaje` FLOAT NULL,
-    `CDes_Estado` ENUM('Valido', 'No valido') NULL,
-    PRIMARY KEY (`IdCodigo_Descuento`)
-);
-
-CREATE TABLE `Tarjeta_Credito` (
-    `IdTarjeta_Credito` INT NOT NULL AUTO_INCREMENT,
-    `TCre_Numero` VARCHAR(16) NOT NULL,
-    `TCre_Cvc` VARCHAR(3) NOT NULL,
-    `TCre_Expiracion` VARCHAR(5) NOT NULL,
-    `TCre_Nombre_Propietario` VARCHAR(45) NOT NULL,
-    `TCre_Apellido_Propietario` VARCHAR(45) NOT NULL,
-    PRIMARY KEY (`IdTarjeta_Credito`)
-);
-
-CREATE TABLE `Ventas` (
-    `IdVentas` INT NOT NULL AUTO_INCREMENT,
-    `Vent_Total` FLOAT NOT NULL,
-    `Vent_Fecha` DATE NOT NULL,
-    `Vent_Usua_Dni` INT NOT NULL,
-    `Vent_IdCodigo_Descuento` INT NULL,
-    `Vent_IdTarjeta_Credito` INT NULL,
-    PRIMARY KEY (`IdVentas`),
-    FOREIGN KEY (`Vent_Usua_Dni`) REFERENCES `Usuario` (`Usua_Dni`),
-    FOREIGN KEY (`Vent_IdCodigo_Descuento`) REFERENCES `Codigo_Descuento` (`IdCodigo_Descuento`),
-    FOREIGN KEY (`Vent_IdTarjeta_Credito`) REFERENCES `Tarjeta_Credito` (`IdTarjeta_Credito`)
-);
-
-CREATE TABLE `Detalle_Venta` (
-    `IdDetalle_Venta` INT NOT NULL AUTO_INCREMENT,
-    `DVen_Vent_IdVentas` INT NOT NULL,
-    `DVent_Prod_IdProductos` INT NOT NULL,
-    `DVen_Cantidad` INT NOT NULL,
-    PRIMARY KEY (`IdDetalle_Venta`),
-    FOREIGN KEY (`DVen_Vent_IdVentas`) REFERENCES `Ventas` (`IdVentas`),
-    FOREIGN KEY (`DVent_Prod_IdProductos`) REFERENCES `Productos` (`IdProductos`)
-);
-
-CREATE TABLE `Carrito` (
-    `Carr_IdProductos` INT NOT NULL AUTO_INCREMENT,
-    `Precio` VARCHAR(45) NULL,
-    `Cantidad` VARCHAR(45) NULL,
-    PRIMARY KEY (`Carr_IdProductos`)
-);
-
-CREATE TABLE `Compras` (
-    `Id_compra` INT NOT NULL AUTO_INCREMENT,
-    `Comp_Costo` FLOAT NOT NULL,
-    `Comp_Fecha` DATE NOT NULL,
-    `Comp_Prov_Ruc` VARCHAR(45) NOT NULL,
-    `Comp_IdTarjeta_Credito` INT NULL,
-    PRIMARY KEY (`Id_compra`),
-    FOREIGN KEY (`Comp_IdTarjeta_Credito`) REFERENCES `Tarjeta_Credito` (`IdTarjeta_Credito`)
-);
-
-CREATE TABLE `Metodo_Pago` (
-    `IdMetodo_Pago` INT NOT NULL AUTO_INCREMENT,
-    `Mpeg_Id_Tarjeta_Credito` INT NOT NULL,
-    `Metodo_Pagocol` VARCHAR(45) NULL,
-    PRIMARY KEY (`IdMetodo_Pago`),
-    FOREIGN KEY (`Mpeg_Id_Tarjeta_Credito`) REFERENCES `Tarjeta_Credito` (`IdTarjeta_Credito`)
-);
-
-CREATE TABLE `Tallas` (
-    `IdTallas` INT NOT NULL AUTO_INCREMENT,
-    `Talla_Nombre` VARCHAR(45) NOT NULL,
-    PRIMARY KEY (`IdTallas`)
-);
-
-CREATE TABLE `Historial` (
-    `IdHistorial` INT NOT NULL AUTO_INCREMENT,
-    `Hist_Accion` VARCHAR(45) NOT NULL,
-    `Hist_Usua_Dni` INT NOT NULL,
-    `Hist_Fecha_Hora` DATETIME NOT NULL,
-    PRIMARY KEY (`IdHistorial`),
-    FOREIGN KEY (`Hist_Usua_Dni`) REFERENCES `Usuario` (`Usua_Dni`)
-);
-
-CREATE TABLE `Inventario` (
-    `IdInventario` INT NOT NULL AUTO_INCREMENT,
-    `Productos_IdProductos` INT NOT NULL,
-    `Tallas_IdTallas` INT NOT NULL,
-    `Cantidad` INT NOT NULL,
-    PRIMARY KEY (`IdInventario`),
-    FOREIGN KEY (`Productos_IdProductos`) REFERENCES `Productos` (`IdProductos`),
-    FOREIGN KEY (`Tallas_IdTallas`) REFERENCES `Tallas` (`IdTallas`)
-);
+    (209, 'Aguascalientes', 12),     -- México
+    (210, 'Baja California', 12),
+    (211, 'Baja California Sur', 12),
+    (212, 'Campeche', 12),
+    (213, 'Chiapas', 12),
+    (214, 'Chihuahua', 12),
+    (215, 'Coahuila', 12),
+    (216, 'Colima', 12),
+    (217, 'Durango', 12),
+    (218, 'Guanajuato', 12),
+    (219, 'Guerrero', 12),
+    (220, 'Hidalgo', 12),
+    (221, 'Jalisco', 12),
+    (222, 'México', 12),
+    (223, 'Michoacán', 12),
+    (224, 'Morelos', 12),
+    (225, 'Nayarit', 12),
+    (226, 'Nuevo León', 12),
+    (227, 'Oaxaca', 12),
+    (228, 'Puebla', 12),
+    (229, 'Querétaro', 12),
+    (230, 'Quintana Roo', 12),
+    (231, 'San Luis Potosí', 12),
+    (232, 'Sinaloa', 12),
+    (233, 'Sonora', 12),
+    (234, 'Tabasco', 12),
+    (235, 'Tamaulipas', 12),
+    (236, 'Tlaxcala', 12),
+    (237, 'Veracruz', 12),
+    (238, 'Yucatán', 12),
+    (239, 'Zacatecas', 12);
+    (240, 'Boaco', 13),         -- Nicaragua
+    (241, 'Carazo', 13),
+    (242, 'Chinandega', 13),
+    (243, 'Chontales', 13),
+    (244, 'Estelí', 13),
+    (245, 'Granada', 13),
+    (246, 'Jinotega', 13),
+    (247, 'León', 13),
+    (248, 'Madriz', 13),
+    (249, 'Managua', 13),
+    (250, 'Masaya', 13),
+    (251, 'Matagalpa', 13),
+    (252, 'Nueva Segovia', 13),
+    (253, 'Río San Juan', 13),
+    (254, 'Rivas', 13);
+    (255, 'Bocas del Toro', 14),     -- Panamá
+    (256, 'Coclé', 14),
+    (257, 'Colón', 14),
+    (258, 'Chiriquí', 14),
+    (259, 'Darién', 14),
+    (260, 'Herrera', 14),
+    (261, 'Los Santos', 14),
+    (262, 'Panamá', 14),
+    (263, 'Panamá Oeste', 14),
+    (264, 'Veraguas', 14),
+    (265, 'Emberá-Wounaan', 14),
+    (266, 'Guna Yala', 14),
+    (267, 'Ngäbe-Buglé', 14);
+    (268, 'Concepción', 15),         -- Paraguay
+    (269, 'San Pedro', 15),
+    (270, 'Cordillera', 15),
+    (271, 'Guairá', 15),
+    (272, 'Caaguazú', 15),
+    (273, 'Caazapá', 15),
+    (274, 'Itapúa', 15),
+    (275, 'Misiones', 15),
+    (276, 'Paraguarí', 15),
+    (277, 'Alto Paraná', 15),
+    (278, 'Central', 15),
+    (279, 'Ñeembucú', 15),
+    (280, 'Amambay', 15),
+    (281, 'Canindeyú', 15),
+    (282, 'Presidente Hayes', 15),
+    (283, 'Boquerón', 15),
+    (284, 'Alto Paraguay', 15);
+    (285, 'Amazonas', 16),         -- Perú
+    (286, 'Áncash', 16),
+    (287, 'Apurímac', 16),
+    (288, 'Arequipa', 16),
+    (289, 'Ayacucho', 16),
+    (290, 'Cajamarca', 16),
+    (291, 'Callao', 16),
+    (292, 'Cusco', 16),
+    (293, 'Huancavelica', 16),
+    (294, 'Huánuco', 16),
+    (295, 'Ica', 16),
+    (296, 'Junín', 16),
+    (297, 'La Libertad', 16),
+    (298, 'Lambayeque', 16),
+    (299, 'Lima', 16),
+    (300, 'Loreto', 16),
+    (301, 'Madre de Dios', 16),
+    (302, 'Moquegua', 16),
+    (303, 'Pasco', 16),
+    (304, 'Piura', 16),
+    (305, 'Puno', 16),
+    (306, 'San Martín', 16),
+    (307, 'Tacna', 16),
+    (308, 'Tumbes', 16),
+    (309, 'Ucayali', 16);
+    (310, 'Azua', 17),               -- República Dominicana
+    (311, 'Bahoruco', 17),
+    (312, 'Barahona', 17),
+    (313, 'Dajabón', 17),
+    (314, 'Duarte', 17),
+    (315, 'Elías Piña', 17),
+    (316, 'El Seibo', 17),
+    (317, 'Espaillat', 17),
+    (318, 'Hato Mayor', 17),
+    (319, 'Independencia', 17),
+    (320, 'La Altagracia', 17),
+    (321, 'La Romana', 17),
+    (322, 'La Vega', 17),
+    (323, 'María Trinidad Sánchez', 17),
+    (324, 'Monseñor Nouel', 17),
+    (325, 'Monte Cristi', 17),
+    (326, 'Monte Plata', 17),
+    (327, 'Pedernales', 17),
+    (328, 'Peravia', 17),
+    (329, 'Puerto Plata', 17),
+    (330, 'Samaná', 17),
+    (331, 'Sánchez Ramírez', 17),
+    (332, 'San Cristóbal', 17),
+    (333, 'San José de Ocoa', 17),
+    (334, 'San Juan', 17),
+    (335, 'San Pedro de Macorís', 17),
+    (336, 'Santiago', 17),
+    (337, 'Santiago Rodríguez', 17),
+    (338, 'Santo Domingo', 17),
+    (339, 'Valverde', 17);
+    (340, 'Artigas', 18),         -- Uruguay
+    (341, 'Canelones', 18),
+    (342, 'Cerro Largo', 18),
+    (343, 'Colonia', 18),
+    (344, 'Durazno', 18),
+    (345, 'Flores', 18),
+    (346, 'Florida', 18),
+    (347, 'Lavalleja', 18),
+    (348, 'Maldonado', 18),
+    (349, 'Montevideo', 18),
+    (350, 'Paysandú', 18),
+    (351, 'Río Negro', 18),
+    (352, 'Rivera', 18),
+    (353, 'Rocha', 18),
+    (354, 'Salto', 18),
+    (355, 'San José', 18),
+    (356, 'Soriano', 18),
+    (357, 'Tacuarembó', 18),
+    (358, 'Treinta y Tres', 18);
+    (359, 'Amazonas', 19),         --  Venezuela
+    (360, 'Anzoátegui', 19),
+    (361, 'Apure', 19),
+    (362, 'Aragua', 19),
+    (363, 'Barinas', 19),
+    (364, 'Bolívar', 19),
+    (365, 'Carabobo', 19),
+    (366, 'Cojedes', 19),
+    (367, 'Delta Amacuro', 19),
+    (368, 'Falcón', 19),
+    (369, 'Guárico', 19),
+    (370, 'Lara', 19),
+    (371, 'Mérida', 19),
+    (372, 'Miranda', 19),
+    (373, 'Monagas', 19),
+    (374, 'Nueva Esparta', 19),
+    (375, 'Portuguesa', 19),
+    (376, 'Sucre', 19),
+    (377, 'Táchira', 19),
+    (378, 'Trujillo', 19),
+    (379, 'Vargas', 19),
+    (380, 'Yaracuy', 19),
+    (381, 'Zulia', 19),
+    (382, 'Distrito Capital', 19),
+    (383, 'Dependencias Federales', 19);
