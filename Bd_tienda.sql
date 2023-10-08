@@ -1,4 +1,5 @@
 INSERT INTO Rol(IdRol, RolNombre) VALUES (1, 'Administrador'), (2, 'Cliente');
+INSERT INTO Estado(IdEstado, Esta_Estatus) VALUES(1, 'Despedido'), (2, 'Contratado'), (3, 'Cuenta Suspendida'), (4, 'Activo');
 INSERT INTO Genero(IdGenero, Gene_Sexo) VALUES (1, 'Hombre'), (2, 'Mujer');
 INSERT INTO Pais (`IdPais`, `Pais_Nombre`) VALUES (1, 'Argentina'),(2, 'Bolivia'),(3, 'Brasil'),(4, 'Chile'),(5, 'Colombia'),(6, 'Costa Rica'),(7, 'Cuba'),(8, 'Ecuador'),(9, 'El Salvador'),(10, 'Guatemala'),(11, 'Honduras'),(12, 'México'),(13, 'Nicaragua'),(14, 'Panamá'),(15, 'Paraguay'),(16, 'Perú'),(17, 'República Dominicana'),(18, 'Uruguay'),(19, 'Venezuela');
 INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
@@ -385,3 +386,5 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (381, 'Zulia', 19),
     (382, 'Distrito Capital', 19),
     (383, 'Dependencias Federales', 19);
+
+INSERT INTO USUARIO(Usua_Dni, Usua_Nombres, Usua_Contrasenha, Usua_IdRol, Usua_Saldo, Usua_Estado)
