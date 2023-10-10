@@ -1,4 +1,4 @@
-INSERT INTO Rol(IdRol, RolNombre) VALUES (1, 'Administrador'), (2, 'Cliente');
+INSERT INTO Rol(IdRol, Rol_Nombre) VALUES (1, 'Administrador'), (2, 'Cliente');
 INSERT INTO Estado(IdEstado, Esta_Estatus) VALUES(1, 'Despedido'), (2, 'Contratado'), (3, 'Cuenta Suspendida'), (4, 'Activo');
 INSERT INTO Genero(IdGenero, Gene_Sexo) VALUES (1, 'Hombre'), (2, 'Mujer');
 INSERT INTO Pais (`IdPais`, `Pais_Nombre`) VALUES (1, 'Argentina'),(2, 'Bolivia'),(3, 'Brasil'),(4, 'Chile'),(5, 'Colombia'),(6, 'Costa Rica'),(7, 'Cuba'),(8, 'Ecuador'),(9, 'El Salvador'),(10, 'Guatemala'),(11, 'Honduras'),(12, 'México'),(13, 'Nicaragua'),(14, 'Panamá'),(15, 'Paraguay'),(16, 'Perú'),(17, 'República Dominicana'),(18, 'Uruguay'),(19, 'Venezuela');
@@ -387,7 +387,7 @@ INSERT INTO Departamento (IdDepartamento, Regi_Nombre, Regi_IdPais) VALUES
     (382, 'Distrito Capital', 19),
     (383, 'Dependencias Federales', 19);
 
-INSERT INTO Usuario(Usua_Dni, Usua_Nombres, Usua_Contrasenha, Usua_Saldo, Usua_IdGenero, Usua_IdRegion, Usua_IdRol, Usua_Estado)
+INSERT INTO Usuario(Usua_Dni, Usua_Nombres, Usua_Contrasenha, Usua_Saldo, Usua_IdGenero, Usua_IdRegion, Usua_IdRol, Usua_IdEstado)
 VALUES
 (70143024, 'Carlos Victor Flores Paxi', 'HESOYAM', 0.00, 1, 307, 1, 2),
 (78415749, 'Maria de la Luz Flores', 'ABCDE', 0.00, 2, 117, 1, 2),
