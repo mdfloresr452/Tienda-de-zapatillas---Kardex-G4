@@ -9,7 +9,7 @@ CREATE TABLE Modelo (
   Mode_Nombre VARCHAR(45) NOT NULL,
   Mod_IdGenero_modelo INT NOT NULL,
   PRIMARY KEY (IdModelo),
-  INDEX Mod_IdGenero_modelo_idx (Mod_IdGenero_modelo ASC) VISIBLE,
+  INDEX Mod_IdGenero_modelo_idx (Mod_IdGenero_modelo ASC),
   CONSTRAINT Mod_IdGenero_modelo
     FOREIGN KEY (Mod_IdGenero_modelo)
     REFERENCES Genero_modelo (IdGenero_modelo)
@@ -39,9 +39,9 @@ CREATE TABLE Productos (
   Prod_IdMarca VARCHAR(45) NOT NULL,
   Detalle_Precios_IdDetalle_Precios INT NOT NULL,
   PRIMARY KEY (IdProductos),
-  INDEX Prod_IdModelo_idx (Prod_IdModelo ASC) VISIBLE,
-  INDEX Prod_IdMarca_idx (Prod_IdMarca ASC) VISIBLE,
-  INDEX fk_Productos_Detalle_Precios1_idx (Detalle_Precios_IdDetalle_Precios ASC) VISIBLE,
+  INDEX Prod_IdModelo_idx (Prod_IdModelo ASC) ,
+  INDEX Prod_IdMarca_idx (Prod_IdMarca ASC) ,
+  INDEX fk_Productos_Detalle_Precios1_idx (Detalle_Precios_IdDetalle_Precios ASC) ,
   CONSTRAINT Prod_IdModelo
     FOREIGN KEY (Prod_IdModelo)
     REFERENCES Modelo (IdModelo)
@@ -60,7 +60,7 @@ CREATE TABLE Departamento (
   Regi_Nombre VARCHAR(45) NOT NULL,
   Regi_IdPais INT NOT NULL,
   PRIMARY KEY (IdDepartamento),
-  INDEX Regi_IdPais_idx (Regi_IdPais ASC) VISIBLE,
+  INDEX Regi_IdPais_idx (Regi_IdPais ASC) ,
   CONSTRAINT Regi_IdPais
     FOREIGN KEY (Regi_IdPais)
     REFERENCES Pais (IdPais)
@@ -96,10 +96,10 @@ CREATE TABLE Usuario (
   Usua_IdRol INT NOT NULL,
   Usua_IdEstado INT NOT NULL,
   PRIMARY KEY (Usua_Dni),
-  INDEX Usua_IdRegion_idx (Usua_IdRegion ASC) VISIBLE,
-  INDEX Usua_IdRol_idx (Usua_IdRol ASC) VISIBLE,
-  INDEX Usua_IdGenero_idx (Usua_IdGenero ASC) VISIBLE,
-  INDEX Usua_IdEstado_idx (Usua_IdEstado ASC) VISIBLE,
+  INDEX Usua_IdRegion_idx (Usua_IdRegion ASC) ,
+  INDEX Usua_IdRol_idx (Usua_IdRol ASC) ,
+  INDEX Usua_IdGenero_idx (Usua_IdGenero ASC) ,
+  INDEX Usua_IdEstado_idx (Usua_IdEstado ASC) ,
   CONSTRAINT Usua_IdRegion
     FOREIGN KEY (Usua_IdRegion)
     REFERENCES Departamento (IdDepartamento)
@@ -145,7 +145,7 @@ CREATE TABLE Tarjeta (
   TCre_Apellido_Propietario VARCHAR(45) NOT NULL,
   TCre_IdMetodo INT NOT NULL,
   PRIMARY KEY (IdTarjeta),
-  INDEX TCre_IdMetodo_idx (TCre_IdMetodo ASC) VISIBLE,
+  INDEX TCre_IdMetodo_idx (TCre_IdMetodo ASC) ,
   CONSTRAINT TCre_IdMetodo
     FOREIGN KEY (TCre_IdMetodo)
     REFERENCES Metodo_Pago (IdMetodo_Pago)
@@ -162,9 +162,9 @@ CREATE TABLE Ventas (
   Vent_IdTarjeta INT NULL,
   Vent_Direccion VARCHAR(45) NOT NULL,
   PRIMARY KEY (IdVentas),
-  INDEX Vent_Usua_Dni_idx (Vent_Usua_Dni ASC) VISIBLE,
-  INDEX Vent_IdCodigo_Descuento_idx (Vent_IdCodigo_Descuento ASC) VISIBLE,
-  INDEX Vent_IdTarjeta_Credito_idx (Vent_IdTarjeta ASC) VISIBLE,
+  INDEX Vent_Usua_Dni_idx (Vent_Usua_Dni ASC) ,
+  INDEX Vent_IdCodigo_Descuento_idx (Vent_IdCodigo_Descuento ASC) ,
+  INDEX Vent_IdTarjeta_Credito_idx (Vent_IdTarjeta ASC) ,
   CONSTRAINT Vent_Usua_Dni
     FOREIGN KEY (Vent_Usua_Dni)
     REFERENCES Usuario (Usua_Dni)
@@ -189,8 +189,8 @@ CREATE TABLE Detalle_Venta (
   DVen_Cantidad INT NOT NULL,
   DVen_PrecioMomento FLOAT NOT NULL,
   PRIMARY KEY (IdDetalle_Venta),
-  INDEX DVen_Vent_IdVentas_idx (DVen_Vent_IdVentas ASC) VISIBLE,
-  INDEX DVent_Prod_IdProductos_idx (DVent_Prod_IdProductos ASC) VISIBLE,
+  INDEX DVen_Vent_IdVentas_idx (DVen_Vent_IdVentas ASC) ,
+  INDEX DVent_Prod_IdProductos_idx (DVent_Prod_IdProductos ASC) ,
   CONSTRAINT DVen_Vent_IdVentas
     FOREIGN KEY (DVen_Vent_IdVentas)
     REFERENCES Ventas (IdVentas)
@@ -217,7 +217,7 @@ CREATE TABLE Compras (
   Comp_Prov_Ruc VARCHAR(45) NOT NULL,
   Comp_IdTarjeta_Credito INT NULL,
   PRIMARY KEY (Id_compra),
-  INDEX Comp_IdTarjeta_Credito_idx (Comp_IdTarjeta_Credito ASC) VISIBLE,
+  INDEX Comp_IdTarjeta_Credito_idx (Comp_IdTarjeta_Credito ASC) ,
   CONSTRAINT Comp_IdTarjeta
     FOREIGN KEY (Comp_IdTarjeta_Credito)
     REFERENCES Tarjeta (IdTarjeta)
@@ -237,7 +237,7 @@ CREATE TABLE Historial (
   Hist_Usua_Dni INT NOT NULL,
   Hist_Fecha_Hora DATETIME NOT NULL,
   PRIMARY KEY (IdHistorial),
-  INDEX Hist_Usua_Dni_idx (Hist_Usua_Dni ASC) VISIBLE,
+  INDEX Hist_Usua_Dni_idx (Hist_Usua_Dni ASC) ,
   CONSTRAINT Hist_Usua_Dni
     FOREIGN KEY (Hist_Usua_Dni)
     REFERENCES Usuario (Usua_Dni)
@@ -249,8 +249,8 @@ CREATE TABLE prod_por_talla (
   Productos_IdProductos VARCHAR(10) NOT NULL,
   Tallas_IdTallas INT NOT NULL,
   Cantidad INT NOT NULL,
-  INDEX fk_table1_Productos1_idx (Productos_IdProductos ASC) VISIBLE,
-  INDEX fk_table1_Tallas1_idx (Tallas_IdTallas ASC) VISIBLE,
+  INDEX fk_table1_Productos1_idx (Productos_IdProductos ASC) ,
+  INDEX fk_table1_Tallas1_idx (Tallas_IdTallas ASC) ,
   CONSTRAINT fk_table1_Productos1
     FOREIGN KEY (Productos_IdProductos)
     REFERENCES Productos (IdProductos)
