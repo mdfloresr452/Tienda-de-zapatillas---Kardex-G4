@@ -392,3 +392,40 @@ VALUES
 (70143024, 'Carlos Victor Flores Paxi', 'HESOYAM', 0.00, 1, 307, 1, 2),
 (78415749, 'Maria de la Luz Flores', 'ABCDE', 0.00, 2, 117, 1, 2),
 (73201649, 'Victor Manuel Sanchez Mamani', 'QWERTY', 0.00, 1, 61, 1, 1);
+
+INSERT INTO Codigo_Descuento(IdCodigo_Descuento, CDes_Codigo, CDes_Porcentaje, CDes_Estado)
+VALUES
+	(1, 2415, 15, "Valido"),
+	(2, 6715, 50, "Valido"),
+	(3, 7134, 30, "No valido");
+INSERT INTO Genero_modelo (IdGenero_modelo, Gmod_tipo) VALUES
+(1, 'Hombres'),
+(2, 'Mujeres'),
+(3, 'Unisex');
+INSERT INTO Modelo (IdModelo, Mode_Nombre, Mod_IdGenero_modelo) VALUES
+(1, 'Modelo 1', 1),
+(2, 'Modelo 2', 1),
+(3, 'Modelo 3', 2);
+INSERT INTO Detalle_Precios (IdDetalle_Precios, DPre_Precio, Detalle_PrecioscolFecha) VALUES
+(1, 100.00, '2023-10-16'),
+(2, 120.00, '2023-10-16'),
+(3, 80.00, '2023-10-16');
+INSERT INTO Marca (IdMarca, Marc_Nombre) VALUES
+(1, 'Nike'),
+(2, 'Adidas'),
+(3, 'Puma');
+INSERT INTO Tallas (IdTallas, Talla_Nombre) VALUES
+(1, 'US 7'),
+(2, 'US 8'),
+(3, 'US 9');
+INSERT INTO Productos (IdProductos, Prod_Nombre, Prod_Stock, Prod_Descripcion, Prod_IdModelo, Prod_IdMarca, Detalle_Precios_IdDetalle_Precios) VALUES
+('PROD1', 'Producto 1', 50, 'Descripción 1', 1, 'Nike', 1),
+('PROD2', 'Producto 2', 40, 'Descripción 2', 2, 'Nike', 2),
+('PROD3', 'Producto 3', 60, 'Descripción 3', 3, 'Adidas', 3);
+INSERT INTO prod_por_talla (Productos_IdProductos, Tallas_IdTallas, Cantidad) VALUES
+('PROD1', 1, 10),
+('PROD1', 2, 20),
+('PROD2', 1, 15),
+('PROD2', 2, 25),
+('PROD3', 2, 30),
+('PROD3', 3, 35);
