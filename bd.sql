@@ -5,16 +5,15 @@ CREATE TABLE Genero_modelo (
 ) ENGINE = InnoDB;
 
 CREATE TABLE Modelo (
-  IdModelo VARCHAR(45) NOT NULL,
-  Mode_Nombre VARCHAR(45) NOT NULL,
-  Mod_IdGenero_modelo INT NOT NULL,
-  PRIMARY KEY (IdModelo),
-  INDEX Mod_IdGenero_modelo_idx (Mod_IdGenero_modelo ASC),
-  CONSTRAINT Mod_IdGenero_modelo
-    FOREIGN KEY (Mod_IdGenero_modelo)
-    REFERENCES Genero_modelo (IdGenero_modelo)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+   IdModelo INT NOT NULL,
+   Mode_Nombre VARCHAR(45) NOT NULL,
+   Mod_IdGenero_modelo INT NOT NULL,
+   PRIMARY KEY (IdModelo),
+   CONSTRAINT Mod_IdGenero_modelo
+     FOREIGN KEY (Mod_IdGenero_modelo)
+     REFERENCES Genero_modelo (IdGenero_modelo)
+     ON DELETE NO ACTION
+     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 
 CREATE TABLE Marca (
@@ -31,23 +30,24 @@ CREATE TABLE Detalle_Precios (
 ) ENGINE = InnoDB;
 
 CREATE TABLE Productos (
-  IdProductos VARCHAR(10) NOT NULL,
-  Prod_Nombre VARCHAR(45) NOT NULL,
-  Prod_Stock INT NOT NULL,
-  Prod_Descripcion VARCHAR(50) NOT NULL,
-  Prod_IdModelo VARCHAR(45) NOT NULL,
-  Prod_IdMarca VARCHAR(45) NOT NULL,
-  Detalle_Precios_IdDetalle_Precios INT NOT NULL,
-  PRIMARY KEY (IdProductos),
-  INDEX Prod_IdModelo_idx (Prod_IdModelo ASC) ,
-  INDEX Prod_IdMarca_idx (Prod_IdMarca ASC) ,
-  INDEX fk_Productos_Detalle_Precios1_idx (Detalle_Precios_IdDetalle_Precios ASC) ,
-  CONSTRAINT Prod_IdModelo
-    FOREIGN KEY (Prod_IdModelo)
-    REFERENCES Modelo (IdModelo)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+   IdProductos VARCHAR(10) NOT NULL,
+   Prod_Nombre VARCHAR(45) NOT NULL,
+   Prod_Stock INT NOT NULL,
+   Prod_Descripcion VARCHAR(50) NOT NULL,
+   Prod_IdModelo INT NOT NULL,
+   Prod_IdMarca VARCHAR(45) NOT NULL,
+   Detalle_Precios_IdDetalle_Precios INT NOT NULL,
+   PRIMARY KEY (IdProductos),
+   INDEX Prod_IdModelo_idx (Prod_IdModelo),
+   INDEX Prod_IdMarca_idx (Prod_IdMarca),
+   INDEX fk_Productos_Detalle_Precios1_idx (Detalle_Precios_IdDetalle_Precios),
+   CONSTRAINT fk_Productos_Modelo
+     FOREIGN KEY (Prod_IdModelo)
+     REFERENCES Modelo (IdModelo)
+     ON DELETE NO ACTION
+     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
 
 CREATE TABLE Pais (
   IdPais INT NOT NULL AUTO_INCREMENT,
@@ -56,17 +56,18 @@ CREATE TABLE Pais (
 ) ENGINE = InnoDB;
 
 CREATE TABLE Departamento (
-  IdDepartamento INT NOT NULL,
-  Regi_Nombre VARCHAR(45) NOT NULL,
-  Regi_IdPais INT NOT NULL,
-  PRIMARY KEY (IdDepartamento),
-  INDEX Regi_IdPais_idx (Regi_IdPais ASC) ,
-  CONSTRAINT Regi_IdPais
-    FOREIGN KEY (Regi_IdPais)
-    REFERENCES Pais (IdPais)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+   IdDepartamento INT NOT NULL,
+   Regi_Nombre VARCHAR(45) NOT NULL,
+   Regi_IdPais INT NOT NULL,
+   PRIMARY KEY (IdDepartamento),
+   INDEX Regi_IdPais_idx (Regi_IdPais),
+   CONSTRAINT Regi_IdPais
+     FOREIGN KEY (Regi_IdPais)
+     REFERENCES Pais (IdPais)
+     ON DELETE NO ACTION
+     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
 
 CREATE TABLE Rol (
   IdRol INT NOT NULL,
@@ -96,10 +97,10 @@ CREATE TABLE Usuario (
   Usua_IdRol INT NOT NULL,
   Usua_IdEstado INT NOT NULL,
   PRIMARY KEY (Usua_Dni),
-  INDEX Usua_IdRegion_idx (Usua_IdRegion ASC) ,
-  INDEX Usua_IdRol_idx (Usua_IdRol ASC) ,
-  INDEX Usua_IdGenero_idx (Usua_IdGenero ASC) ,
-  INDEX Usua_IdEstado_idx (Usua_IdEstado ASC) ,
+  INDEX Usua_IdRegion_idx (Usua_IdRegion ASC),
+  INDEX Usua_IdRol_idx (Usua_IdRol ASC),
+  INDEX Usua_IdGenero_idx (Usua_IdGenero ASC),
+  INDEX Usua_IdEstado_idx (Usua_IdEstado ASC),
   CONSTRAINT Usua_IdRegion
     FOREIGN KEY (Usua_IdRegion)
     REFERENCES Departamento (IdDepartamento)
@@ -145,7 +146,7 @@ CREATE TABLE Tarjeta (
   TCre_Apellido_Propietario VARCHAR(45) NOT NULL,
   TCre_IdMetodo INT NOT NULL,
   PRIMARY KEY (IdTarjeta),
-  INDEX TCre_IdMetodo_idx (TCre_IdMetodo ASC) ,
+  INDEX TCre_IdMetodo_idx (TCre_IdMetodo ASC),
   CONSTRAINT TCre_IdMetodo
     FOREIGN KEY (TCre_IdMetodo)
     REFERENCES Metodo_Pago (IdMetodo_Pago)
@@ -163,8 +164,8 @@ CREATE TABLE Ventas (
   Vent_Direccion VARCHAR(45) NOT NULL,
   PRIMARY KEY (IdVentas),
   INDEX Vent_Usua_Dni_idx (Vent_Usua_Dni ASC) ,
-  INDEX Vent_IdCodigo_Descuento_idx (Vent_IdCodigo_Descuento ASC) ,
-  INDEX Vent_IdTarjeta_Credito_idx (Vent_IdTarjeta ASC) ,
+  INDEX Vent_IdCodigo_Descuento_idx (Vent_IdCodigo_Descuento ASC),
+  INDEX Vent_IdTarjeta_Credito_idx (Vent_IdTarjeta ASC),
   CONSTRAINT Vent_Usua_Dni
     FOREIGN KEY (Vent_Usua_Dni)
     REFERENCES Usuario (Usua_Dni)
@@ -183,7 +184,7 @@ CREATE TABLE Ventas (
 ) ENGINE = InnoDB;
 
 CREATE TABLE Detalle_Venta (
-  IdDetalle_Venta INT NOT NULL,
+  IdDetalle_Venta INT NOT NULL AUTO_INCREMENT,
   DVen_Vent_IdVentas INT NOT NULL,
   DVent_Prod_IdProductos VARCHAR(10) NOT NULL,
   DVen_Cantidad INT NOT NULL,
@@ -204,11 +205,12 @@ CREATE TABLE Detalle_Venta (
 ) ENGINE = InnoDB;
 
 CREATE TABLE Carrito (
-  Carr_IdProductos VARCHAR(10) NOT NULL,
-  Precio VARCHAR(45) NULL,
-  Cantidad VARCHAR(45) NULL,
-  PRIMARY KEY (Carr_IdProductos)
-) ENGINE = InnoDB;
+  Id INT auto_increment primary KEY,
+  Idventa int(11),
+  Idproducto varchar(10),
+  cantidad int(11),
+  preciomomento float
+);
 
 CREATE TABLE Compras (
   Id_compra INT NOT NULL AUTO_INCREMENT,
