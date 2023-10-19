@@ -406,10 +406,6 @@ INSERT INTO Modelo (IdModelo, Mode_Nombre, Mod_IdGenero_modelo) VALUES
 (1, 'Modelo 1', 1),
 (2, 'Modelo 2', 1),
 (3, 'Modelo 3', 2);
-INSERT INTO Detalle_Precios (IdDetalle_Precios, DPre_Precio, Detalle_PrecioscolFecha) VALUES
-(1, 100.00, '2023-10-16'),
-(2, 120.00, '2023-10-16'),
-(3, 80.00, '2023-10-16');
 INSERT INTO Marca (IdMarca, Marc_Nombre) VALUES
 (1, 'Nike'),
 (2, 'Adidas'),
@@ -418,10 +414,10 @@ INSERT INTO Tallas (IdTallas, Talla_Nombre) VALUES
 (1, 'US 7'),
 (2, 'US 8'),
 (3, 'US 9');
-INSERT INTO Productos (IdProductos, Prod_Nombre, Prod_Stock, Prod_Descripcion, Prod_IdModelo, Prod_IdMarca, Detalle_Precios_IdDetalle_Precios) VALUES
-('PROD1', 'Producto 1', 50, 'Descripción 1', 1, 'Nike', 1),
-('PROD2', 'Producto 2', 40, 'Descripción 2', 2, 'Nike', 2),
-('PROD3', 'Producto 3', 60, 'Descripción 3', 3, 'Adidas', 3);
+INSERT INTO Productos (IdProductos, Prod_Nombre, Prod_Stock, Prod_Descripcion, Prod_IdModelo, Prod_IdMarca, Prod_Precios) VALUES
+('PROD1', 'Producto 1', 50, 'Descripción 1', 1, 'Nike', 35),
+('PROD2', 'Producto 2', 40, 'Descripción 2', 2, 'Nike', 25),
+('PROD3', 'Producto 3', 60, 'Descripción 3', 3, 'Adidas', 45);
 INSERT INTO prod_por_talla (Productos_IdProductos, Tallas_IdTallas, Cantidad) VALUES
 ('PROD1', 1, 10),
 ('PROD1', 2, 20),
